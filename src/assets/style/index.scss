@@ -1,0 +1,24 @@
+@import "normalize.css";
+@import "element-plus/theme-chalk/dark/css-vars.css";
+@import "./icon-font.css";
+@import "./animate.scss";
+@import "animate.css";
+@import "nprogress/nprogress.css";
+@import "element-plus/dist/index.css";
+
+.el-dropdown__popper {
+    margin-top: 5px;
+}
+.el-card__body {
+    padding: 15px 20PX !important;
+}
+:root {
+    --el-text-color-disabled: #f2f2f5;
+}
+.el-menu-item.is-active {
+    // background-color: var(--el-color-primary);
+    color: white;
+    &:hover {
+        // background-color: var(--el-color-primary);
+    }
+}
