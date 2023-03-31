@@ -5,7 +5,7 @@ import { setupRouter } from './router';
 import { setupDirective } from './directive';
 import '@/assets/style/index.scss';
 // import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
-
+import i18n from './i18n';
 import 'uno.css';
 import 'virtual:svg-icons-register';
 import App from './App.vue';
@@ -21,7 +21,7 @@ setupRouter(app);
 setupGlobalComponent(app);
 // 初始化pinia
 setupPinia(app);
-
-setTimeout(() => {
-  app.mount('#app');
-}, 2000);
+app.use(i18n);
+// setTimeout(() => {
+app.mount('#app');
+// }, 2000);

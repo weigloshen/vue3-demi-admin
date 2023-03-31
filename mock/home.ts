@@ -27,7 +27,7 @@ export default [
             emoij: '🍏',
           },
           {
-            name: '链接',
+            name: 'link',
             color: '#6366f1',
             title: '链接',
             number: 777,

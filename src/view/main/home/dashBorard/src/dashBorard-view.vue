@@ -3,7 +3,7 @@
   <div class="DashBorard">
     <el-row :gutter="20">
       <el-col v-for="i in card_total" :key="i.name" :span="6">
-        <total-card v-bind="i" />
+        <total-card v-bind="i" :comp-name="NAME" />
       </el-col>
     </el-row>
     <el-row :gutter="20">
@@ -19,10 +19,13 @@
             <el-tab-pane
               v-for="(value, key) in tabPane"
               :key="key"
-              :label="value"
+              :label="$t(NAME + value)"
               :name="key"
             >
-              <p v-for="i in 8" :key="i">{{ value }}{{ i }} 刚刚又增加了....</p>
+              <p v-for="i in 8" :key="i">
+                {{ $t(NAME + value) }}{{ i }}
+                {{ $t(NAME + 'JustAddedAgain') }}....
+              </p>
             </el-tab-pane>
           </el-tabs>
         </el-card>
@@ -50,17 +53,19 @@ import TotalCard from '@/components/total-card/src/total-card.vue';
 import useStore from '@/store';
 import { ElMessage } from 'element-plus';
 const activeName = ref('first');
-
+const NAME = 'dashborard.';
 const { homeStore } = useStore();
 onMounted(() => {
   homeStore.getCardTotal();
 });
 const { card_total } = storeToRefs(homeStore);
+console.log(card_total);
+
 const tabPane = {
-  first: '用户',
-  second: '配置',
-  third: '权限',
-  fourth: '任务',
+  first: 'user',
+  second: 'config',
+  third: 'permission',
+  fourth: 'task',
 };
 
 ElMessage({

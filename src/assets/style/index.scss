@@ -16,9 +16,9 @@
     --el-text-color-disabled: #f2f2f5;
 }
 .el-menu-item.is-active {
-    // background-color: var(--el-color-primary);
-    color: white;
+    background-color: var(--el-color-primary);
+    color: white !important;
     &:hover {
-        // background-color: var(--el-color-primary);
+        background-color: var(--el-color-primary);
     }
 }

@@ -2,11 +2,11 @@ import * as echarts from 'echarts';
 
 const scaleData = [
   {
-    name: 'stars数',
+    name: 'stars',
     value: 10,
   },
   {
-    name: '活跃度',
+    name: 'live',
     value: 20,
   },
   {
@@ -14,7 +14,7 @@ const scaleData = [
     value: 20,
   },
   {
-    name: '其他方面',
+    name: 'other',
     value: 27,
   },
 ];

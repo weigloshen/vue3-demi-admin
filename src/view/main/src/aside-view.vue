@@ -13,7 +13,7 @@
           duration-500
           text-bg-gray
         >
-          海绵兄弟
+          {{ $t('menu.title') }}
         </span>
       </main>
     </section>
@@ -33,7 +33,7 @@
           <el-icon>
             <svg-icon :name="value[0].meta?.p"></svg-icon>
           </el-icon>
-          <span tracking-3px>{{ value[0].meta?.p }}</span>
+          <span tracking-3px>{{ $t(NAME + value[0].meta?.p) }}</span>
         </template>
         <template v-if="value.length > 0"> </template>
         <el-menu-item
@@ -42,7 +42,7 @@
           :index="item.path"
           @click="routerSwitch(item.path)"
         >
-          {{ item.meta?.title }}
+          {{ $t(NAME + item.meta?.title) }}
         </el-menu-item>
       </el-sub-menu>
     </el-menu>
@@ -54,6 +54,7 @@
 import url from '@/assets/svg/spongebob.svg';
 import { mapRouterMenu } from '@/utils/mapRouterMenu';
 import { RouteLocationNormalizedLoaded } from 'vue-router';
+const NAME = 'menu.';
 const routes = useRouter();
 const route = useRoute();
 const defaultActive = ref('');
@@ -74,6 +75,8 @@ watch(
 const menus = computed(() => {
   return mapRouterMenu(routes.getRoutes());
 });
+console.log(menus.value);
+
 // 切换路由
 const routerSwitch = (path: string) => {
   routes.push(path);

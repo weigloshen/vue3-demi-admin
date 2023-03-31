@@ -1,15 +1,8 @@
 <!-- html结构 -->
 <template>
-  <div
-    class="tabs-view"
-    dark:bg-page_dark
-    h-35px
-    flex
-    items-center
-    bg-page_light
-  >
-    <el-space>
-      <el-check-tag
+  <div class="tabs-view" h-35px flex items-center>
+    <el-space px-2>
+      <!-- <el-check-tag
         v-for="item in tabs"
         :key="item.path"
         v-tab-close
@@ -30,7 +23,18 @@
           class="close"
           @click.stop="closeTab(item.path)"
         />
-      </el-check-tag>
+      </el-check-tag> -->
+      <el-tag
+        v-for="item in tabs"
+        :key="item.path"
+        my-2
+        :closable="currentPath === item.path"
+        cursor-pointer
+        @close="closeTab(item.path)"
+        @click="appStore.setCurrentPath(item.path)"
+      >
+        {{ $t('menu.' + item.title) }}
+      </el-tag>
     </el-space>
   </div>
 </template>
@@ -46,4 +50,8 @@ const closeTab = (path: string) => {
 };
 </script>
 <!-- 样式设置 -->
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.tabs-view {
+  border-bottom: 1px solid var(--el-menu-border-color) !important;
+}
+</style>

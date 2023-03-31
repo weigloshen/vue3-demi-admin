@@ -2,9 +2,9 @@
 <template>
   <el-breadcrumb v-show="!themeStore.isLoading" separator="/" ml-5>
     <el-breadcrumb-item>
-      {{ text.title }}
+      {{ $t('menu.' + text.title) }}
     </el-breadcrumb-item>
-    <el-breadcrumb-item>{{ text.subtitle }}</el-breadcrumb-item>
+    <el-breadcrumb-item>{{ $t('menu.' + text.subtitle) }}</el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 

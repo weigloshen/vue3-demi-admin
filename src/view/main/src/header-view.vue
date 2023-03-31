@@ -22,16 +22,16 @@
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item>
-                <el-icon>
-                  <svg-icon name="cn" />
-                </el-icon>
-                中文
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <el-icon> <svg-icon name="en" /> </el-icon
-                >English</el-dropdown-item
+              <el-dropdown-item
+                v-for="i in options"
+                :key="i.name"
+                @click="i18n.locale.value = i.name"
               >
+                <el-icon>
+                  <svg-icon :name="i.name" />
+                </el-icon>
+                {{ i.title }}
+              </el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
@@ -47,9 +47,19 @@
 <!-- vue(Ts)代码 -->
 <script setup lang="ts">
 import Breadcrumb from '@/components/breadcrumb/src/breadcrumb.vue';
-
+import { useI18n } from 'vue-i18n';
 const { isFullscreen, toggle } = useFullscreen();
-
+const i18n = useI18n();
+const options = [
+  {
+    name: 'cn',
+    title: '中文',
+  },
+  {
+    name: 'en',
+    title: 'English',
+  },
+];
 defineProps<{
   isCollapse: boolean; // 是否展开侧边栏
   toggleMenu: () => void; // 切换侧边栏

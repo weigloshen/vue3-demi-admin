@@ -1,0 +1,32 @@
+export default {
+  menu: {
+    title: '海绵兄弟',
+    system: '系统管理',
+    homePage: '主页',
+    components: '组件',
+    link: '链接',
+    dashborard: '仪盘表',
+    workbench: '工作台',
+    menus: '人员菜单',
+    permission: '权限列表',
+    information: '岗位信息',
+    form: '表单',
+    model: '模态框',
+    bing: '嵌入必应',
+  },
+  dashborard: {
+    user: '用户',
+    config: '配置',
+    permission: '权限分配',
+    task: '任务',
+    JustAddedAgain: '刚刚有增加了',
+  },
+  workbench: {
+    hello: '你好啊',
+  },
+  star: 'stars',
+  dinosaur: '活跃度',
+  flame: '浏览量',
+  link: '链接',
+  rustMessage: '写前端真是辛苦呢，你现在该去写rust了。是不是甜晕了😋',
+};

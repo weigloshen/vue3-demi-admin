@@ -3,7 +3,7 @@
   <el-card>
     <div class="Total-card" flex justify-between items-center>
       <div class="card-header" flex flex-col>
-        <span class="text" text-xl text-gray>{{ title }}</span>
+        <span class="text" text-xl text-gray>{{ $t(name) }}</span>
         <span
           mt-3
           text-gray-300

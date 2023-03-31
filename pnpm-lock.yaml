@@ -43,6 +43,7 @@ specifiers:
   vite-plugin-svg-icons: ^2.0.1
   vite-plugin-vue-setup-extend: ^0.4.0
   vue: ^3.2.45
+  vue-i18n: 9.3.0-beta.17
   vue-router: ^4.1.6
   vue-tsc: ^1.0.24
 
@@ -59,6 +60,7 @@ dependencies:
   pinia: registry.npmmirror.com/pinia/2.0.32_hmuptsblhheur2tugfgucj7gc4
   pinia-plugin-persistedstate: registry.npmmirror.com/pinia-plugin-persistedstate/3.1.0_pinia@2.0.32
   vue: registry.npmmirror.com/vue/3.2.47
+  vue-i18n: 9.3.0-beta.17_vue@3.2.47
   vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.47
 
 devDependencies:
@@ -299,6 +301,44 @@ packages:
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     dev: true
 
+  /@intlify/core-base/9.3.0-beta.17:
+    resolution: {integrity: sha512-M/ZUU53G68YKN59E2gd/bOZB4TvFMWXvpWIgwsLJeAjktKYOt7JDSGdGHYGivKAG12pTGWeIeY6WmJCaDenloA==}
+    engines: {node: '>= 14'}
+    dependencies:
+      '@intlify/devtools-if': 9.3.0-beta.17
+      '@intlify/message-compiler': 9.3.0-beta.17
+      '@intlify/shared': 9.3.0-beta.17
+      '@intlify/vue-devtools': 9.3.0-beta.17
+    dev: false
+
+  /@intlify/devtools-if/9.3.0-beta.17:
+    resolution: {integrity: sha512-up5vm1ytN9Wm/loKjFlp5TuDy7dmBVgU3UOk1vLUXUfYH+EMlm07pUXNiIpSjdt4Eak+bSLfsWcqPwhsb2jknw==}
+    engines: {node: '>= 14'}
+    dependencies:
+      '@intlify/shared': 9.3.0-beta.17
+    dev: false
+
+  /@intlify/message-compiler/9.3.0-beta.17:
+    resolution: {integrity: sha512-i7hvVIRk1Ax2uKa9xLRJCT57to08OhFMhFXXjWN07rmx5pWQYQ23MfX1xgggv9drnWTNhqEiD+u4EJeHoS5+Ww==}
+    engines: {node: '>= 14'}
+    dependencies:
+      '@intlify/shared': 9.3.0-beta.17
+      source-map: 0.6.1
+    dev: false
+
+  /@intlify/shared/9.3.0-beta.17:
+    resolution: {integrity: sha512-mscf7RQsUTOil35jTij4KGW1RC9SWQjYScwLxP53Ns6g24iEd5HN7ksbt9O6FvTmlQuX77u+MXpBdfJsGqizLQ==}
+    engines: {node: '>= 14'}
+    dev: false
+
+  /@intlify/vue-devtools/9.3.0-beta.17:
+    resolution: {integrity: sha512-Wzl+3kZONjYG3lL8I8G+4H46s7m3CkxyoZXjZgC0zMy51cq1OTlOuOohcgxpwcSSYYVj9Y86PvlSakPNqHEweA==}
+    engines: {node: '>= 14'}
+    dependencies:
+      '@intlify/core-base': 9.3.0-beta.17
+      '@intlify/shared': 9.3.0-beta.17
+    dev: false
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -366,6 +406,10 @@ packages:
     dependencies:
       '@types/node': 18.14.6
     dev: true
+
+  /@vue/devtools-api/6.5.0:
+    resolution: {integrity: sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==}
+    dev: false
 
   /ansi-styles/2.2.1:
     resolution: {integrity: sha512-kmCevFghRiWM7HB5zTPULl4r9bVFSWjz62MhqizDGUrq2NWuNMQyuv4tHHoKJHs69M/MF64lEcHdYIocrdWQYA==}
@@ -786,6 +830,16 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
+  /source-map/0.5.7:
+    resolution: {integrity: sha512-LbrmJOMUSdEVxIKvdcJzQC+nQhe8FUZQTXQy6+I75skNgn3OoQ0DZA8YnFa7gp8tqtL3KPf1kmo0R5DoApeSGQ==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  /source-map/0.6.1:
+    resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /statuses/1.5.0:
     resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
     engines: {node: '>= 0.6'}
@@ -866,6 +920,19 @@ packages:
       - rollup
       - supports-color
     dev: true
+
+  /vue-i18n/9.3.0-beta.17_vue@3.2.47:
+    resolution: {integrity: sha512-2r6QWgwCMjzpLb6RuIU8XPw8vU9kJu8OE4zGIOOnNq1gMYrzawO1LlK/yxG7ugWmzFA/IBqSIs6ADu0Z+PO/Ow==}
+    engines: {node: '>= 14'}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@intlify/core-base': 9.3.0-beta.17
+      '@intlify/shared': 9.3.0-beta.17
+      '@intlify/vue-devtools': 9.3.0-beta.17
+      '@vue/devtools-api': 6.5.0
+      vue: registry.npmmirror.com/vue/3.2.47
+    dev: false
 
   /zrender/5.4.1:
     resolution: {integrity: sha512-M4Z05BHWtajY2241EmMPHglDQAJ1UyHQcYsxDNzD9XLSkPDqMq4bB28v9Pb4mvHnVQ0GxyTklZ/69xCFP6RXBA==}
@@ -6392,7 +6459,7 @@ packages:
       define-property: registry.npmmirror.com/define-property/0.2.5
       extend-shallow: registry.npmmirror.com/extend-shallow/2.0.1
       map-cache: registry.npmmirror.com/map-cache/0.2.2
-      source-map: registry.npmmirror.com/source-map/0.5.7
+      source-map: 0.5.7
       source-map-resolve: registry.npmmirror.com/source-map-resolve/0.5.3
       use: registry.npmmirror.com/use/3.1.1
     transitivePeerDependencies:

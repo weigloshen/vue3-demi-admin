@@ -6,7 +6,7 @@
         <div w-full flex justify-between items-center py-2>
           <div text-xl f-center>
             <span mr-2 text-5xl>😋</span>
-            <span>你好啊，weigloshen~</span>
+            <span>{{ $t(NAME + 'hello') }}，weigloshen~</span>
           </div>
 
           <el-avatar
@@ -14,7 +14,7 @@
             cursor-pointer
             :size="64"
             :src="rust"
-            @click="open"
+            @click="() => open($t('rustMessage'))"
           />
         </div>
       </template>
@@ -72,9 +72,10 @@ import rust from '@/assets/svg/rust.svg';
 import TotalCard from '@/components/total-card/src/total-card.vue';
 import { ElMessage } from 'element-plus';
 import { line } from './config';
-const open = () => {
+const NAME = 'workbench.';
+const open = (message: string) => {
   ElMessage({
-    message: '写前端幸苦了，该写rust了',
+    message: message,
     grouping: true,
     type: 'success',
   });
@@ -102,7 +103,7 @@ const cardTotal = [
     emoij: '🍏',
   },
   {
-    name: '链接',
+    name: 'link',
     color: '#6366f1',
     title: '链接',
     number: 777,

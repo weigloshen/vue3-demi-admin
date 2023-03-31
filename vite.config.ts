@@ -9,7 +9,7 @@ const splitDependencies = ['lodash', 'mock'];
 //development  production
 export default ({ mode }: ConfigEnv) => {
   return defineConfig({
-    base: '/vue3-demi-admin/',
+    base: '/',
     server: {
       // 是否开启 https
       https: false,
