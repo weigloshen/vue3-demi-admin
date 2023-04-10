@@ -15,7 +15,7 @@
                 <el-icon :size="14" mr-2>
                   <svg-icon name="add" />
                 </el-icon>
-                新增
+                {{ $t('add') }}
               </el-button>
               <el-button
                 type="danger"
@@ -29,7 +29,7 @@
                 <el-icon :size="14" mr-2>
                   <svg-icon name="delete" />
                 </el-icon>
-                删除
+                {{ $t('remove') }}
               </el-button>
             </el-space>
           </div>
@@ -39,13 +39,13 @@
                 <el-icon :size="14" mr-2>
                   <svg-icon name="search" />
                 </el-icon>
-                查询
+                {{ $t('select') }}
               </el-button>
               <el-button @click="on_reset">
                 <el-icon :size="14" mr-2>
                   <svg-icon name="reset" />
                 </el-icon>
-                重置
+                {{ $t('reset') }}
               </el-button>
             </el-space>
           </div>
@@ -63,9 +63,11 @@
           </template>
           <template #handle="{ row }">
             <el-button plain type="warning" @click="() => editDialog(row)">
-              编辑
+              {{ $t('edit') }}
             </el-button>
-            <el-button plain type="danger" @click="on_reset"> 删除 </el-button>
+            <el-button plain type="danger" @click="on_reset">
+              {{ $t('remove') }}
+            </el-button>
           </template>
         </my-table>
       </el-card>

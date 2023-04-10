@@ -23,6 +23,14 @@ export default {
   },
   workbench: {
     hello: 'Hello World',
+    todo: 'todo',
+    more: 'more...',
+    moreBug: 'more bug',
+    completed: 'completed',
+    uncompleted: 'uncompleted',
+    tbcompleted: 'tbcompleted',
+    dispose: 'Response bug, pending..',
+    test: 'test',
   },
   star: 'stars',
   dinosaur: 'dinosaur',
@@ -30,4 +38,9 @@ export default {
   link: 'link',
   rustMessage:
     "It's hard work to write frontends, and it's time for you to write Rust. Is it sweet and dizzy",
+  add: 'add',
+  remove: 'remove',
+  edit: 'edit',
+  reset: 'reset',
+  select: 'select',
 };

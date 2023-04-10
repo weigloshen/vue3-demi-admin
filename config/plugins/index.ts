@@ -10,6 +10,8 @@ import viteCompression from 'vite-plugin-compression';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { viteMockServe } from 'vite-plugin-mock';
+
+// import commonjsExternals from 'vite-plugin-commonjs-externals';
 const getPlugins = (mode: string) => {
   return [
     vue(),

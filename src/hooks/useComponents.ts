@@ -1,7 +1,6 @@
 import MyDialog from '@/components/dialog';
 import MyForm from '@/components/form';
 import MyTable from '@/components/table';
-
 type IGlobalThis<T> = globalThis.ComputedRef<T>;
 type FN = () => void;
 // dialog的一些数据暴露
@@ -17,9 +16,10 @@ export const useDialog = (): [Ref<any>, FN, (row: any) => void] => {
   const editDialog = (row: any) => {
     if (modelRef.value) {
       const formRef = modelRef.value.formRef;
+      console.log(formRef);
 
       if (formRef) {
-        if (!formRef.modelValue) formRef?.on_reset(); // 如果在表单刚开始打开直接单机编辑按钮 form中的属性没有绑定起来 所以会没有数据
+        if (!formRef.modelValue) formRef?.on_reset(row); // 如果在表单刚开始打开直接单机编辑按钮 form中的属性没有绑定起来 所以会没有数据
         Object.keys(row).forEach(key => {
           formRef.modelValue[key] = row[key];
         });

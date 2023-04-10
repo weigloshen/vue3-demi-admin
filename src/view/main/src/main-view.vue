@@ -29,7 +29,7 @@
         </el-footer>
       </el-container>
     </el-container>
-    <Setting/>
+    <Setting />
   </div>
 </template>
 
@@ -39,9 +39,9 @@ import FooterView from './footer-view.vue';
 import AsideView from './aside-view.vue';
 import HeaderView from './header-view.vue';
 import TabsView from './tabs-view.vue';
-import Setting from "@/components/setting"
-const isCollapse = ref(false); // 是否展开侧边栏
+import Setting from '@/components/setting';
 
+const isCollapse = ref(false); // 是否展开侧边栏
 </script>
 <!-- 样式设置 -->
 <style lang="scss" scoped>

@@ -24,7 +24,7 @@ defineProps<{
 }>();
 const formRef = ref<InstanceType<typeof MyForm>>();
 const dialogFormVisible = ref(false);
-
+formRef.value?.on_reset();
 defineExpose({
   dialogFormVisible,
   formRef,

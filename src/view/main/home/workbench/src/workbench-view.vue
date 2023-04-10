@@ -29,8 +29,8 @@
       <el-col :span="12">
         <el-card shadow="hover">
           <div flex items-center justify-between>
-            <span>📓待办事项</span>
-            <el-button class="button" text>更多事项...</el-button>
+            <span>📓{{ $t(NAME + 'todo') }}</span>
+            <el-button class="button" text>{{ $t(NAME + 'more') }}</el-button>
           </div>
           <div flex flex-col gap-2>
             <el-alert
@@ -38,9 +38,11 @@
               :key="i"
               :type="i % 2 == 0 ? 'success' : i % 3 == 0 ? 'error' : 'info'"
             >
-              <span v-if="i % 2 == 0">已完成事项</span>
-              <span v-else-if="i % 3 == 0 && i % 2 != 0">未完成事项</span>
-              <span v-else>待完成事项</span>
+              <span v-if="i % 2 == 0"> {{ $t(NAME + 'completed') }}... </span>
+              <span v-else-if="i % 3 == 0 && i % 2 != 0">
+                {{ $t(NAME + 'uncompleted') }}...
+              </span>
+              <span v-else>{{ $t(NAME + 'tbcompleted') }}...</span>
             </el-alert>
           </div>
         </el-card>
@@ -49,15 +51,17 @@
         <el-card>
           <div flex items-center justify-between>
             <span>🐞bug</span>
-            <el-button class="button" text>更多霸哥(99+)</el-button>
+            <el-button class="button" text
+              >{{ $t(NAME + 'moreBug') }}(99+)</el-button
+            >
           </div>
           <div flex flex-col gap-2>
             <el-alert v-for="i in 8" :key="i" type="error">
-              <span
-                >测试{{
-                  Math.floor(Math.random() * 100)
-                }}反应的bug,待处理..</span
-              >
+              <span>{{
+                $t(NAME + 'test') +
+                Math.floor(Math.random() * 100) +
+                $t(NAME + 'dispose')
+              }}</span>
             </el-alert>
           </div></el-card
         >

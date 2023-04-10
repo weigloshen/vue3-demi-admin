@@ -20,6 +20,7 @@
     <el-menu
       flex-1
       class="el-menu-vertical-demo"
+      unique-opened
       w-230px
       :collapse="isCollapse"
       :default-active="defaultActive"
@@ -75,8 +76,6 @@ watch(
 const menus = computed(() => {
   return mapRouterMenu(routes.getRoutes());
 });
-console.log(menus.value);
-
 // 切换路由
 const routerSwitch = (path: string) => {
   routes.push(path);

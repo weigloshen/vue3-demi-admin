@@ -3,6 +3,7 @@ import {
   getSystemMenuList,
   getSystemPermissionsList,
   getSystemInformationsList,
+  getMonitorLogin_logList,
 } from '@/api';
 export interface IMenus {
   name: string;
@@ -37,6 +38,7 @@ interface SystemState {
   menus: IMenus[];
   permissions: IPermissions[];
   informations: IInformations[];
+  login_log: Array<any>;
   isLoading: boolean;
 }
 
@@ -45,12 +47,13 @@ export const useSystemStore = defineStore('system', {
     menus: [],
     permissions: [],
     informations: [],
+    login_log: [],
     isLoading: false,
   }),
   getters: {},
   actions: {
     async sendApi(
-      name: 'menus' | 'permissions' | 'informations',
+      name: 'menus' | 'permissions' | 'informations' | 'login_log',
       page_size = 10,
       current_page = 1,
       attribute?: string,
@@ -65,6 +68,9 @@ export const useSystemStore = defineStore('system', {
         case 'informations':
           this.getInformations(page_size, current_page, attribute);
           break;
+        case 'login_log':
+          this.getLogin_log(page_size, current_page, attribute);
+          break;
         default:
           break;
       }
@@ -77,9 +83,8 @@ export const useSystemStore = defineStore('system', {
       this.isLoading = true;
       const data = await getSystemMenuList(page_size, current_page, attribute);
       this.menus = data.data;
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 500);
+
+      this.isLoading = false;
     },
     async getPermissions(
       page_size: number,
@@ -93,17 +98,14 @@ export const useSystemStore = defineStore('system', {
         attribute,
       );
       this.permissions = data.data;
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 500);
+
+      this.isLoading = false;
     },
     async getInformations(
       page_size: number,
       current_page: number,
       attribute?: string,
     ) {
-      console.log(attribute);
-
       this.isLoading = true;
       const data = await getSystemInformationsList(
         page_size,
@@ -111,9 +113,24 @@ export const useSystemStore = defineStore('system', {
         attribute,
       );
       this.informations = data.data;
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 500);
+
+      this.isLoading = false;
+    },
+    async getLogin_log(
+      page_size: number,
+      current_page: number,
+      attribute?: any,
+    ) {
+      this.isLoading = true;
+      const data = await getMonitorLogin_logList(
+        page_size,
+        current_page,
+        attribute,
+      );
+      this.login_log = data.data as any[];
+      console.log(data.data);
+
+      this.isLoading = false;
     },
   },
 });

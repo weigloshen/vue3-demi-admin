@@ -60,7 +60,7 @@ import useStore from '@/store';
 import { TableOption } from '..';
 const props = withDefaults(
   defineProps<{
-    dataName: 'menus' | 'permissions' | 'informations'; // 从systemStore中取的数据名
+    dataName: 'menus' | 'permissions' | 'informations' | 'login_log'; // 从systemStore中取的数据名
     pageSize?: number; // 一页多少条
     currentPage?: number; // 第几页
     isPagination?: boolean; // 是否显示分页

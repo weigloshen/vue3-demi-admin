@@ -58,13 +58,13 @@ const props = defineProps<{
 }>();
 const modelValue = ref<any>({});
 
-const on_reset = () => {
-  forEach(props.options, item => {
+const on_reset = (options = props.options) => {
+  forEach(options, item => {
     modelValue.value[item.field] = '';
   });
 };
 
-on_reset();
+// on_reset();
 defineExpose({
   modelValue,
   on_reset,

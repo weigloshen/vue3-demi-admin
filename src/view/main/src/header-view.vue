@@ -16,7 +16,7 @@
           mr-1
           @click="toggle"
         />
-        <el-dropdown trigger="click" mr-5>
+        <el-dropdown trigger="hover" mr-5>
           <span class="el-dropdown-link">
             <svg-icon name="语言" />
           </span>
