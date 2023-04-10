@@ -14,7 +14,7 @@ export default [
   {
     url: '/mock/api/system/menu/list',
     method: 'get',
-    response: options => {
+    response: (options: any) => {
       const arr: any = [];
       console.log(options.query);
       for (let index = 0; index < options.query.page_size; index++) {
@@ -38,7 +38,7 @@ export default [
   {
     url: '/mock/api/system/permissions/list',
     method: 'get',
-    response: options => {
+    response: (options: any) => {
       const arr: any = [];
       console.log(options.query);
       // 描述; 创建人
@@ -66,7 +66,7 @@ export default [
   {
     url: '/mock/api/system/information/list',
     method: 'get',
-    response: options => {
+    response: (options: any) => {
       const arr: any = [];
       console.log();
       for (let index = 0; index < options.query.page_size; index++) {
