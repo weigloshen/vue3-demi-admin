@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/logo.svg" width="40%" />
+  <img src="./public/logo.png" width="40%" />
 </p>
 <p align="center">
   <img src="https://svg.hamm.cn/badge.svg?key=License&value=MIT" />
