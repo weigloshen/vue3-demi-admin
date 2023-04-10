@@ -23,14 +23,13 @@
     "paths": { // 用于设置模块名到基于baseUrl的路径映射
       "@/*": [
         "src/*",
-        "mock/**/*.ts"
+        "mock/*"
       ]
     }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
-    "src/**/*.tsx",
     "src/**/*.vue",
     "types/*.d.ts"
   ],
