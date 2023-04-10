@@ -19,6 +19,14 @@ const getPlugins = (mode: string) => {
     unocss(path.resolve(process.cwd(), 'uno.config.ts')),
     viteMockServe({
       mockPath: '/mock',
+      localEnabled: true, // 开发打包开关
+      prodEnabled: true, // 生产打包开关
+      // 这样可以控制关闭mock的时候不让mock打包到最终代码内
+      injectCode: `
+        import { setupProdMockServer } from './mockProdServer';
+        setupProdMockServer();
+      `,
+      logger: false, //是否在控制台显示请求日志
     }),
     setupExtend(), // 为setup添加名字
     AutoImport({
