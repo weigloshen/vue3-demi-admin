@@ -19,8 +19,6 @@ const getPlugins = (mode: string) => {
     unocss(path.resolve(process.cwd(), 'uno.config.ts')),
     viteMockServe({
       mockPath: '/mock',
-      prodEnabled: true,
-      localEnabled: true,
     }),
     setupExtend(), // 为setup添加名字
     AutoImport({
