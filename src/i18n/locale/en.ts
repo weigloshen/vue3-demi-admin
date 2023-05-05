@@ -13,6 +13,7 @@ export default {
     form: 'form',
     model: 'model',
     bing: 'bing',
+    g6: 'g6',
   },
   dashborard: {
     user: 'user',

@@ -9,8 +9,20 @@
     dark:bg-page_dark
   >
     <section flex-1 h-screen f-center>
-      <img v-show="themeStore.isDark" src="@/assets/api-d.svg" alt="dark" />
-      <img v-show="!themeStore.isDark" src="@/assets/api-l.svg" alt="light" />
+      <img
+        v-show="themeStore.isDark"
+        src="@/assets/api-d.svg"
+        alt="dark"
+        width="800"
+        height="400"
+      />
+      <img
+        v-show="!themeStore.isDark"
+        src="@/assets/api-l.svg"
+        alt="light"
+        width="800"
+        height="400"
+      />
     </section>
     <section flex-1 h-screen f-center relative flex-col>
       <svg-icon name="spongebob" size="12"></svg-icon>

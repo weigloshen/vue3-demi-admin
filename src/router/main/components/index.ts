@@ -17,6 +17,14 @@ const componentsRouter: RouteRecordRaw[] = [
       p: 'components',
     },
   },
+  {
+    path: '/g6',
+    component: () => import('@/view/main/components/g6'),
+    meta: {
+      title: 'g6',
+      p: 'components',
+    },
+  },
 ];
 
 export default componentsRouter;

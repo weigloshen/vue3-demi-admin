@@ -16,6 +16,7 @@ export default {
     monitor: '监控',
     login_log: '登录日志',
     operate_log: '操作日志',
+    g6: '流程图',
   },
   dashborard: {
     user: '用户',
