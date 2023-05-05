@@ -1,0 +1,1 @@
+import{_ as e,o,e as t}from"./index-f8fc1903.js";import"./lodash-f24acc27.js";import"./mock-70785340.js";const c={},r={class:"Model"};function s(n,_){return o(),t("div",r,"Model")}const l=e(c,[["render",s]]);export{l as default};

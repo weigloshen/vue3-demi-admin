@@ -1,0 +1,1 @@
+import{_ as e,o,e as t}from"./index-f8fc1903.js";import"./lodash-f24acc27.js";import"./mock-70785340.js";const r={},c={class:"Main/monitor/operate_log"};function n(s,_){return o(),t("div",c)}const p=e(r,[["render",n]]);export{p as default};

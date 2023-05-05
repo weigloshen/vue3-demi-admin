@@ -1,0 +1,1 @@
+import{_ as e,o,e as r}from"./index-f8fc1903.js";import"./lodash-f24acc27.js";import"./mock-70785340.js";const t={};function c(n,s){return o(),r("div",null,"123")}const f=e(t,[["render",c]]);export{f as default};
